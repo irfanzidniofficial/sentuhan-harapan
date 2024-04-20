@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class FundraisingPhase extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        "name",
+        "notes",
+        "photo",
+        "fundraising_id",
+
+    ];
 }
