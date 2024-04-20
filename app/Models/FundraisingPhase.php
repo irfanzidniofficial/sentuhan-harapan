@@ -16,4 +16,6 @@ class FundraisingPhase extends Model
         "fundraising_id",
 
     ];
+   
 }
+

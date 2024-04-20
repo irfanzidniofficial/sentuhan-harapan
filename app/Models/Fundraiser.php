@@ -14,4 +14,8 @@ class Fundraiser extends Model
         "user_id",
         "is_active"
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

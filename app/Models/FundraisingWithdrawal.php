@@ -22,4 +22,12 @@ class FundraisingWithdrawal extends Model
         'fundraising_id',
         'fundraiser_id',
     ];
+
+    public function fundraiser(){
+        return $this->belongsTo(Fundraiser::class);
+    }
+
+    public function fundraising(){
+        return $this->belongsTo(Fundraising::class);
+    }
 }

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('phone_number');
-            $table->unsignedBigInteger('fundrasing_id');
+            $table->foreignId('fundraising_id')->constrained('fundraisings')->onDelete('cascade');
             $table->unsignedBigInteger('total_amount');
             $table->string('notes');
             $table->string('proof');

@@ -18,4 +18,8 @@ class Donatur extends Model
         "notes",
         "is_paid",
     ];
+
+    public function fundraising(){
+        return $this->belongsTo(Fundraising::class);
+    }
 }
