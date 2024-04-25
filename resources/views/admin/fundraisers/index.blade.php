@@ -87,11 +87,11 @@
                         <p class="text-slate-500 text-base">Jadilah bagian dari kami untuk membantu <br>mereka yang membutuhkan dana tambahan</p>
                     </div>
 
-                    @if($fundraiserStatus=='Pending')
+                    @if($fundraiserStatus =='Pending')
                     <span class="w-fit text-sm font-bold py-2 px-3 rounded-full bg-orange-500 text-white">
                         PENDING
                     </span> 
-                    @elseif($fundraiserStatus=='Active')
+                    @elseif($fundraiserStatus =='Active')
                         <button type="submit" class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
                             Create a Fundraising
                         </button>

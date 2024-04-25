@@ -45,9 +45,9 @@
 
                     @role('fundraiser')
 
-                    <x-nav-link :href="route('admin.my-withdrawals.index')" :active="request()->routeIs('admin.my-withdrawals.index')">
+                    {{-- <x-nav-link :href="route('admin.my-withdrawals.index')" :active="request()->routeIs('admin.my-withdrawals.index')">
                         {{ __('My Withdrawls') }}
-                    </x-nav-link>
+                    </x-nav-link> --}}
 
                     @endrole
 

@@ -48,6 +48,6 @@ class User extends Authenticatable
     }
 
     public function fundraiser(){
-        return $this->belongsTo(Fundraiser::class);
+        return $this->hasOne(Fundraiser::class);
     }
 }
