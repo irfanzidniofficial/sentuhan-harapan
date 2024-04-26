@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Fundraising;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FundraisingController extends Controller
 {
@@ -12,7 +13,17 @@ class FundraisingController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user();
+        $fundrasierQuery = Fundraising::with(['category', 'fundraiser', 'donaturs'])->orderByDesc('id');
+
+        if($user->hasRole('fundraiser')){
+            $fundrasierQuery->whereHas('fundraiser', function($query)use ($user){
+                $query->where('user_id', $user->id);
+            });
+        }
+        $fundraisings = $fundrasierQuery->paginate(10);
+
+        return view('admin.fundraisings.index', compact('fundraisings'));
     }
 
     /**
