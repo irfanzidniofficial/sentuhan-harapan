@@ -4,7 +4,7 @@
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ __('Manage Fundraisings') }}
             </h2>
-            <a href="#" class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
+            <a href="{{ route('admin.fundraisings.create') }}" class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
                 Add New
             </a>
         </div>
@@ -16,10 +16,9 @@
 
                 @forelse ($fundraisings as $fundraising)
               
-
                 <div class="item-card flex flex-col md:flex-row gap-y-10 justify-between md:items-center">
                     <div class="flex flex-row items-center gap-x-3">
-                        <img src="{{ Storage::url($fundraisings->thumbnail) }}">
+                        <img src="{{ Storage::url($fundraising->thumbnail) }}" alt="" class="rounded-2xl object-cover w-[120px] h-[90px]">
                         <div class="flex flex-col">
                             <h3 class="text-indigo-950 text-xl font-bold">{{ $fundraising->name }}</h3>
                             <p class="text-slate-500 text-sm">{{ $fundraising->category->name }}</p>
@@ -27,7 +26,7 @@
                     </div>
                     <div class="hidden md:flex flex-col">
                         <p class="text-slate-500 text-sm">Target Amount</p>
-                        <h3 class="text-indigo-950 text-xl font-bold">{{ fundraising->target_amount }}</h3>
+                        <h3 class="text-indigo-950 text-xl font-bold">{{ $fundraising->target_amount }}</h3>
                     </div>
                     <div class="hidden md:flex flex-col">
                         <p class="text-slate-500 text-sm">Donaturs</p>

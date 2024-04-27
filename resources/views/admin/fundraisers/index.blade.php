@@ -15,9 +15,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-10 flex flex-col gap-y-5">
 
                 @forelse ($fundraisers as $fundraiser)
-                    
-              
-
+               
                 <div class="item-card flex flex-row justify-between items-center">
                     <div class="flex flex-row items-center gap-x-3">
                         <img src="{{ Storage::url($fundraiser->user->avatar) }}" alt="" class="rounded-2xl object-cover w-[90px] h-[90px]">
@@ -92,9 +90,9 @@
                         PENDING
                     </span> 
                     @elseif($fundraiserStatus =='Active')
-                        <button type="submit" class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
+                        <a href="{{ route('admin.fundraisings.create') }}" type="submit" class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
                             Create a Fundraising
-                        </button>
+                        </a>
 
                     @else
                     <form action="{{ route('admin.fundraiser.apply') }}" method="POST">
