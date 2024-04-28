@@ -11,7 +11,7 @@ class UpdateFundraisingRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return $this->role()->hasAnyRole(["fundraiser"]);
+        return $this->user()->hasAnyRole(["fundraiser"]);
     }
 
     /**
