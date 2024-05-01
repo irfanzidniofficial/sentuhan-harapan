@@ -23,7 +23,7 @@
                     </x-nav-link>
 
                     <x-nav-link :href="route('admin.donaturs.index')" :active="request()->routeIs('admin.donaturs.index')">
-                        {{ __('Fundraisings') }}
+                        {{ __('Donaturs') }}
                     </x-nav-link>
 
                     <x-nav-link :href="route('admin.fundraising_withdrawals.index')" :active="request()->routeIs('admin.fundraising_withdrawls.index')">
